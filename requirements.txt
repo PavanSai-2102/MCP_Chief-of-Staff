@@ -1,0 +1,6 @@
+streamlit
+python-dotenv
+google-generativeai
+mcp
+google-auth-oauthlib
+google-api-python-client
