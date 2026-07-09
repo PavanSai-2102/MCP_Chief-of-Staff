@@ -1,0 +1,67 @@
+[
+  {
+    "id": "thread_001",
+    "subject": "URGENT: Production API latency spike — need immediate eyes",
+    "messages": [
+      {
+        "from": "Arjun Mehta <arjun.mehta@zestlabs.com>",
+        "date": "2026-06-20 09:12 AM",
+        "body": "Hey Pavan,\n\nWe're seeing p99 latency on the /v2/ingest endpoint spike to 4.2s (normally ~200ms). Started around 08:45 IST. The data pipeline team is getting timeout errors downstream.\n\nI've checked — no new deployments since yesterday. Could be a connection pool issue on the Postgres side.\n\nCan you look at the DB metrics and let me know if you see anything unusual? We might need to restart the connection pooler.\n\nThis is blocking the morning ETL batch.\n\nThanks,\nArjun"
+      },
+      {
+        "from": "Sneha Kulkarni <sneha.k@zestlabs.com>",
+        "date": "2026-06-20 09:28 AM",
+        "body": "Adding myself here. I can confirm the ETL jobs for the analytics warehouse are failing with connection timeout errors. If this isn't resolved by 10:30, we'll miss the SLA for the daily dashboard refresh.\n\nPavan — any update?"
+      }
+    ]
+  },
+  {
+    "id": "thread_002",
+    "subject": "Q3 Roadmap — need your input by Friday",
+    "messages": [
+      {
+        "from": "Divya Rao <divya.rao@zestlabs.com>",
+        "date": "2026-06-19 02:15 PM",
+        "body": "Hi Pavan,\n\nI'm finalizing the Q3 roadmap deck for the board review next Tuesday. From the data engineering side, I need your top 2-3 priorities.\n\nSpecifically:\n1. Should we prioritize the data lake migration to Iceberg, or the real-time streaming pipeline?\n2. What's the estimated effort for each?\n3. Any dependencies on other teams?\n\nPlease send your thoughts by Friday EOD so I can incorporate them.\n\nBest,\nDivya\nVP of Engineering"
+      }
+    ]
+  },
+  {
+    "id": "thread_003",
+    "subject": "Weekly Standup Notes — June 16-20",
+    "messages": [
+      {
+        "from": "Kiran Desai <kiran.d@zestlabs.com>",
+        "date": "2026-06-20 10:00 AM",
+        "body": "Hi team,\n\nHere are the standup notes from this week:\n\n**Pavan** — Wrapped up the Airflow DAG migration for the customer events pipeline. Started spike on Kafka consumer group rebalancing issue.\n\n**Meera** — Completed data quality checks for the billing dataset. Found 3 anomalies, filed tickets.\n\n**Rohan** — Working on the dbt model refactor for the marketing attribution pipeline. ETA next Wednesday.\n\n**Blockers:**\n- Waiting on DevOps for the staging Kafka cluster resize (ticket #4821)\n- Need access to the new Snowflake sandbox environment\n\nNo action needed — just FYI.\n\nThanks,\nKiran"
+      }
+    ]
+  },
+  {
+    "id": "thread_004",
+    "subject": "Re: Fivetran Contract Renewal — Decision Needed",
+    "messages": [
+      {
+        "from": "Priya Sharma <priya.sharma@zestlabs.com>",
+        "date": "2026-06-18 11:30 AM",
+        "body": "Hi Pavan,\n\nThe Fivetran contract is up for renewal on July 1. They've offered us two options:\n\n1. Renew at current tier ($2,400/mo) — same 50 connectors\n2. Upgrade to Business tier ($3,800/mo) — 100 connectors + priority support\n\nGiven that we're planning to onboard 15+ new data sources in Q3, I wanted your take on whether the upgrade makes sense from a technical standpoint.\n\nAlso — are there any open-source alternatives we should evaluate before committing?\n\nNeed to respond to the vendor by next Wednesday.\n\nThanks,\nPriya\nProcurement Lead"
+      },
+      {
+        "from": "Vikram Joshi <vikram.j@zestlabs.com>",
+        "date": "2026-06-19 09:45 AM",
+        "body": "Pavan — looping you in since this directly impacts the data platform budget. Would love your recommendation before we finalize.\n\n— Vikram"
+      }
+    ]
+  },
+  {
+    "id": "thread_005",
+    "subject": "Meeting Request: AI Feature Review — Anomaly Detection Module",
+    "messages": [
+      {
+        "from": "Tanvi Gupta <tanvi.g@zestlabs.com>",
+        "date": "2026-06-20 11:00 AM",
+        "body": "Hey Pavan,\n\nThe ML team has a working prototype of the anomaly detection module for pipeline health monitoring. We'd like to walk you through the design before we integrate it into the data platform.\n\nKey topics:\n- How the model flags data drift and schema changes\n- Integration points with our existing Airflow alerting\n- Data requirements (what do we need from your pipelines?)\n\nCould you do a 45-min review session next Tuesday or Wednesday afternoon?\n\nLet me know what works.\n\nThanks,\nTanvi\nML Engineering Lead"
+      }
+    ]
+  }
+]

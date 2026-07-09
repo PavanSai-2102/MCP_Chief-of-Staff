@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "context": "Reaching out to a referral about job opportunities",
+    "incoming_subject": "Reference from Mr. Subba Gonella - Opportunities at PwC",
+    "reply": "Dear Nathan Sir,\n\nI hope you are doing well.\n\nMy name is Pavan Sai Pillalamarri. I was referred to you by my uncle, Mr. Subba Gonella, and wanted to check if there might be any suitable opportunities at PwC.\n\nI hold an MS in Information Technology (Data Science) from IIIT Hyderabad and have experience working as a Data Analyst / SDE with skills in Python, SQL, Excel and Power BI. I am currently exploring new opportunities and would be grateful if you could kindly review my profile.\n\nPlease find my resume attached.\n\nWarm regards,\nPavan Sai Pillalamarri\n+91 6309650821\npavanpillalamarri222@gmail.com"
+  },
+  {
+    "id": 2,
+    "context": "Replying to HR regarding final salary and pending bonus processing",
+    "incoming_subject": "Confirmation Required for Final Salary Processing",
+    "reply": "Dear Divya,\n\nThank you for the update.\nI confirm the final salary calculation for 30 days as detailed above. Please proceed with the immediate processing of the final salary.\nI would also like to request the immediate processing of the pending bonus for the last four months.\n\nThanks & Regards,\nPavan Sai P"
+  },
+  {
+    "id": 3,
+    "context": "Requesting a refund for a double challan payment",
+    "incoming_subject": "Refund for Double Challan payment",
+    "reply": "Hi Helpdesk,\n\nI am writing regarding a recent challan payment.\n\nI paid a challan on the e-challan website of my bike, but the first attempt did not reflect as successful, leading me to make a second payment. As a result, I have paid the challan twice.\n\nI would like to request a refund for the duplicate payment. I have attached the receipts for both payments for your reference.\n\nPlease let me know the process for initiating the refund.\n\nThank you for your time and assistance.\n\nSincerely,\nPavan Sai P"
+  }
+]

@@ -1,0 +1,36 @@
+# Environments
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Mac
+.DS_Store
+
+# Google API Credentials & Logs
+token.json
+credentials.json
+gcp-oauth.keys.json
+
+# Dynamic Data Files
+action_log.json
+approved_drafts.json
+
+# Node / MCP Server
+Gmail-MCP-Server/node_modules/
+Gmail-MCP-Server/dist/
+Gmail-MCP-Server/.env
+
+# Temporary / Scratch scripts
+scratch.py
+scratch2.py
+test_*.py
+test.py
