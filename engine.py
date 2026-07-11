@@ -13,13 +13,15 @@ from mcp.client.session import ClientSession
 
 from triage import triage_inbox
 
+MCP_SERVER_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Gmail-MCP-Server", "dist", "index.js")
+
 async def fetch_threads_async() -> List[Dict]:
     """
     Asynchronous function to fetch the last 20 inbox threads via Gmail MCP Server.
     """
     server_params = StdioServerParameters(
         command="node",
-        args=["/Users/pavan2102/Documents/MacBook-Documents/Projects/Masai_June_Cohort/MCP Chief of Staff/Gmail-MCP-Server/dist/index.js"]
+        args=[MCP_SERVER_PATH]
     )
     
     threads = []
@@ -92,7 +94,7 @@ async def send_reply_async(thread_id: str, to: str, subject: str, body: str, mes
 
     server_params = StdioServerParameters(
         command="node",
-        args=["/Users/pavan2102/Documents/MacBook-Documents/Projects/Masai_June_Cohort/MCP Chief of Staff/Gmail-MCP-Server/dist/index.js"]
+        args=[MCP_SERVER_PATH]
     )
     
     async with stdio_client(server_params) as (read, write):
