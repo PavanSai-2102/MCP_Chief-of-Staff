@@ -13,7 +13,14 @@ from mcp.client.session import ClientSession
 
 from triage import triage_inbox
 
-MCP_SERVER_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Gmail-MCP-Server", "dist", "index.js")
+MCP_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Gmail-MCP-Server")
+MCP_SERVER_PATH = os.path.join(MCP_DIR, "dist", "index.js")
+
+if not os.path.exists(MCP_SERVER_PATH):
+    import subprocess
+    print("Building MCP Server...")
+    subprocess.run(["npm", "install"], cwd=MCP_DIR, check=True)
+    subprocess.run(["npm", "run", "build"], cwd=MCP_DIR, check=True)
 
 async def fetch_threads_async() -> List[Dict]:
     """
