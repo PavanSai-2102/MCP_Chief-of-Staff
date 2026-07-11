@@ -13,6 +13,22 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+def load_cloud_secrets():
+    try:
+        # Securely load files from Streamlit Cloud secrets to local disk for the Node.js MCP server
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        if hasattr(st, "secrets"):
+            if "GCP_OAUTH_KEYS" in st.secrets:
+                with open(os.path.join(base_dir, "gcp-oauth.keys.json"), "w") as f:
+                    f.write(st.secrets["GCP_OAUTH_KEYS"])
+            if "GCP_CREDENTIALS" in st.secrets:
+                with open(os.path.join(base_dir, "credentials.json"), "w") as f:
+                    f.write(st.secrets["GCP_CREDENTIALS"])
+    except Exception:
+        pass
+
+load_cloud_secrets()
+
 # ── Local imports ─────────────────────────────────────────────────────────
 from triage import triage_inbox
 from draft_machine import draft_reply
