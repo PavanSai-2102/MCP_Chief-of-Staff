@@ -17,13 +17,23 @@ def load_cloud_secrets():
     try:
         # Securely load files from Streamlit Cloud secrets to local disk for the Node.js MCP server
         base_dir = os.path.dirname(os.path.abspath(__file__))
+        global_dir = os.path.expanduser("~/.gmail-mcp")
+        os.makedirs(global_dir, exist_ok=True)
+        
         if hasattr(st, "secrets"):
             if "GCP_OAUTH_KEYS" in st.secrets:
+                content = st.secrets["GCP_OAUTH_KEYS"]
                 with open(os.path.join(base_dir, "gcp-oauth.keys.json"), "w") as f:
-                    f.write(st.secrets["GCP_OAUTH_KEYS"])
+                    f.write(content)
+                with open(os.path.join(global_dir, "gcp-oauth.keys.json"), "w") as f:
+                    f.write(content)
+            
             if "GCP_CREDENTIALS" in st.secrets:
+                content = st.secrets["GCP_CREDENTIALS"]
                 with open(os.path.join(base_dir, "credentials.json"), "w") as f:
-                    f.write(st.secrets["GCP_CREDENTIALS"])
+                    f.write(content)
+                with open(os.path.join(global_dir, "credentials.json"), "w") as f:
+                    f.write(content)
     except Exception:
         pass
 
